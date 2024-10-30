@@ -14,6 +14,6 @@ with open('dhabstracts_urls.csv', 'r') as data_in, open('dhabstracts_status.csv'
             status = response.status_code
             print(url + ' ' + str(status))
             writer.writerow([url,str(status)])
-        except:
+        except requests.exceptions.RequestException as e:
             print(url + ' did not work')
-            writer.writerow([url,'unknown'])
+            writer.writerow([url,str(e)])
