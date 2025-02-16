@@ -4,8 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-requests = "*"
 urlextract = "*"
+requests = "*"
+csv = "*"
+itertools = "*"
+urllib3 = "*"
 
 [dev-packages]
 
