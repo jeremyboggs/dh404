@@ -3,10 +3,9 @@ import csv
 from requests.adapters import HTTPAdapter, Retry
 import urllib3
 
-
 with open('dhabstracts_urls.csv', 'r') as data_in, open('dhabstracts_status.csv', 'a', newline='') as data_out:
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
- 
+
     reader = csv.reader(data_in, delimiter=',')
     next(reader, None)  # skip the headers
 
@@ -36,6 +35,6 @@ with open('dhabstracts_urls.csv', 'r') as data_in, open('dhabstracts_status.csv'
         except requests.exceptions.RequestException as e:
             status = e
             message = 'failed'
-        
+
         print('Row '+ str(row_number+1) + ' ' + url + ' ' + message)
         writer.writerow([url,str(status)])

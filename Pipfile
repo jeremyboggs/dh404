@@ -9,6 +9,7 @@ requests = "*"
 csv = "*"
 itertools = "*"
 urllib3 = "*"
+pandas = "*"
 
 [dev-packages]
 
